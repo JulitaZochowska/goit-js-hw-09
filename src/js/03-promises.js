@@ -1,4 +1,7 @@
 import Notiflix from 'notiflix';
+Notiflix.Notify.init({
+  useIcon: false,
+});
 
 const inputDelay = document.querySelector('input[name="delay"]');
 const inputDelayStep = document.querySelector('input[name="step"]');

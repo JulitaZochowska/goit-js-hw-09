@@ -49,6 +49,21 @@ const onClick = () => {
     const now = new Date();
     const ms = selectedDate - now;
     const convertedMs = convertMs(ms);
+
+    if (
+      //ms to milisekundy
+      ms <= 0
+      //tak nie mozna, bo days nie sa inputami, musialabys wziac innerHTML, prasowac
+      //(days.value <= 0) &
+      //(hours.value <= 0) &
+      // (minutes.value <= 0) &
+      // (seconds.value <= 0)
+    ) {
+      clearInterval(timerID);
+      //mozna to tez zrobic przy uzyciu biblioteki  notiflix
+      window.alert('Time gone!');
+    }
+
     //ustawia zawartość elementu HTML, który ma atrybut `data-days`
     //, na wartość zwróconą przez funkcję `addLeadingZero`
     days.innerHTML = addLeadingZero(convertedMs.remainingDays);
