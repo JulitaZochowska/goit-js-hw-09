@@ -62,14 +62,14 @@ const onClick = () => {
       clearInterval(timerID);
       //mozna to tez zrobic przy uzyciu biblioteki  notiflix
       window.alert('Time gone!');
+    } else {
+      //ustawia zawartość elementu HTML, który ma atrybut `data-days`
+      //, na wartość zwróconą przez funkcję `addLeadingZero`
+      days.innerHTML = addLeadingZero(convertedMs.remainingDays);
+      hours.innerHTML = addLeadingZero(convertedMs.remainingHours);
+      minutes.innerHTML = addLeadingZero(convertedMs.remainingMinutes);
+      seconds.innerHTML = addLeadingZero(convertedMs.remainingSeconds);
     }
-
-    //ustawia zawartość elementu HTML, który ma atrybut `data-days`
-    //, na wartość zwróconą przez funkcję `addLeadingZero`
-    days.innerHTML = addLeadingZero(convertedMs.remainingDays);
-    hours.innerHTML = addLeadingZero(convertedMs.remainingHours);
-    minutes.innerHTML = addLeadingZero(convertedMs.remainingMinutes);
-    seconds.innerHTML = addLeadingZero(convertedMs.remainingSeconds);
   }, 1000);
 };
 
